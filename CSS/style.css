@@ -132,11 +132,11 @@ button {
   align-items: center;
   position: absolute;
   bottom: 20px;
-  font-size: 15px;
+  font-size: 16px;
   color: white;
   font-family: "Gowun Dodum", sans-serif;
 }
 
 #quote span:last-child {
-  margin-top: 5px;
+  margin-top: 3px;
 }
