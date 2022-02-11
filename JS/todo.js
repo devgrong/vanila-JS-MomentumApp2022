@@ -18,6 +18,20 @@ function deleteTodo(event) {
   todos = todos.filter((todo) => todo.id !== parseInt(li.id));
   localStorage.setItem(TODOS_KEY, JSON.stringify(todos));
 }
+function checkChange(event) {
+  const li = event.target.parentElement;
+  if (li.children[0].innerText === "O") {
+    li.children[0].classList.add("buttontext--color");
+    li.children[1].classList.add("buttontext--color");
+    li.children[1].classList.add("buttontext--line");
+    li.children[0].innerText = "✓";
+  } else {
+    li.children[0].classList.remove("buttontext--color");
+    li.children[1].classList.remove("buttontext--color");
+    li.children[1].classList.remove("buttontext--line");
+    li.children[0].innerText = "O";
+  }
+}
 
 function paintTodo(newTodo) {
   const li = document.createElement("li");
@@ -27,16 +41,23 @@ function paintTodo(newTodo) {
   // 위의 말과 동일 : li.id는 string이 되는 이유=document안의 element라서
   const span = document.createElement("span");
   span.innerText = newTodo.text;
-  const button = document.createElement("button");
-  button.innerText = "❌";
-  button.addEventListener("click", deleteTodo);
+  const buttonX = document.createElement("button");
+  buttonX.innerText = "X";
+  buttonX.addEventListener("click", deleteTodo);
+  const buttonCheck = document.createElement("button");
+  buttonCheck.innerText = "O";
+  buttonCheck.addEventListener("click", checkChange);
+  li.appendChild(buttonCheck);
   li.appendChild(span);
-  li.appendChild(button);
-  //   아직 이 함수 내에서 굴러가고 있기 때문에 현재로서는 li의 위치가 정해지지 않았고, 그냥 span만 li의 자식이 된다!
-  li.appendChild(button);
+  li.appendChild(buttonX);
+  //   아직 이 함수 내에서 굴러가고 있기 때문에 현재로서는 li의 위치가 정해지지 않았고,
+  // 그냥 span만 li의 자식이 된다!
+  // li.appendChild(button);
   todoList.appendChild(li);
 }
-
+{
+  /* <i class="fa-regular fa-circle-check"></i> / */
+}
 function handleTodoSubmit(event) {
   event.preventDefault();
   console.log(todoInput.value);
