@@ -9,13 +9,13 @@ function onGeoOk(postition) {
       const city = document.querySelector("#weather span:last-child");
       weather.innerText = `${data.weather[0].main} / ${data.main.temp}℃`;
       city.innerText = `@${data.name}`;
+      if (API_KEY === undefined) {
+        weather.innerText = "Your API KEY is hiding somewhere!";
+      }
     });
 }
 function onGeoError() {
   alert("Can't find you!");
 }
 
-if (API_KEY === null) {
-  alert("Your API KEY is hiding somewhere!");
-}
 navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
