@@ -15,4 +15,7 @@ function onGeoError() {
   alert("Can't find you!");
 }
 
+if (API_KEY === null) {
+  alert("Your API KEY is hiding somewhere!");
+}
 navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
