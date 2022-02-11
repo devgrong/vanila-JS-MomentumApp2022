@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600&family=Gowun+Dodum&display=swap");
+
+@import "reset.css";
+
+.hidden {
+  display: none;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: "Arimo", sans-serif;
+  font-weight: 400;
+}
+
+/* visibility:hidden이랑 display:none의 차이점도 알게되었어요
+visibility:hidden은 공간은 그대로 두고 보이지만 않는건데 
+display:none은 잡아둔 공간도 사라진다고 하더라고요! */
+/* 또한 visibility:hidden은 자식까지 모두 숨겨버린다! */
+
+img {
+  position: absolute;
+  top: 0%;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+.loginform--display {
+  color: white;
+  font-size: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 650px;
+}
+
+#login-form input:nth-child(2) {
+  text-align: center;
+  border-bottom: 3px solid white;
+  width: 620px;
+  margin-top: 15px;
+}
+
+#login-form input:last-child {
+  font-size: 16px;
+  border: 1px solid white;
+  padding: 10px 25px;
+  font-weight: 400;
+  border-radius: 50px;
+  margin-top: 20px;
+}
+
+#clock {
+  color: white;
+  font-size: 150px;
+  font-weight: 500;
+}
+
+#greeting {
+  color: white;
+  font-size: 55px;
+}
+
+#weather {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+#weather span:first-child {
+  font-size: 20px;
+}
+#weather span:last-child {
+  margin-top: 5px;
+}
+
+.todo-form--display {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  margin-top: 35px;
+}
+#todo-form span {
+  text-align: center;
+  font-size: 30px;
+}
+#todo-form input {
+  border-bottom: 2px solid white;
+  font-size: 25px;
+  width: 480px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+#todo-list {
+  position: absolute;
+  height: 205px;
+  width: 280px;
+  bottom: 80px;
+  font-size: 24px;
+  color: white;
+  overflow-y: scroll;
+}
+#todo-list::-webkit-scrollbar {
+  display: none;
+}
+
+li {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+li span {
+  width: 240px;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.5);
+}
+button {
+  font-size: 16px;
+  margin-left: 5px;
+}
+#quote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  bottom: 20px;
+  font-size: 15px;
+  color: white;
+  font-family: "Gowun Dodum", sans-serif;
+}
+
+#quote span:last-child {
+  margin-top: 5px;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Momentum App</title>
+    <link rel="stylesheet" href="CSS/style.css" />
+  </head>
+  <body>
+    <h2 id="clock" class="hidden">00:00:00</h2>
+    <form class="hidden loginform--display" id="login-form">
+      <span>Welcome, who are you?</span>
+      <input required maxlength="15" type="text" value="" />
+      <input class="hidden" type="submit" value="continue" />
+      <!-- input 안에 있는 <button>을 누르거나 type=submit인 input을 클릭하면 form이 submit된다! -->
+    </form>
+    <h1 id="greeting" class="hidden"></h1>
+    <div id="weather">
+      <span class="hidden"></span>
+      <span class="hidden"></span>
+    </div>
+    <form id="todo-form" class="hidden todo-form--display">
+      <span>📃What are you going to do today?</span>
+      <input type="text" required />
+    </form>
+    <ul id="todo-list"></ul>
+    <div id="quote">
+      <span class="hidden"></span>
+      <span class="hidden"></span>
+    </div>
+    <script src="JS/apikey.js"></script>
+    <script src="JS/clock.js"></script>
+    <script defer src="JS/greetings.js"></script>
+    <script src="JS/quotes.js"></script>
+    <script src="JS/background.js"></script>
+    <script src="JS/todo.js"></script>
+    <script defer src="JS/weather.js"></script>
+  </body>
+</html>
